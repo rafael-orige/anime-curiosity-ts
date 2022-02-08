@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  position: relative;
   min-height: 100vh;
+  background: rgb(169, 206, 244);
+  background: linear-gradient(
+    45deg,
+    rgba(169, 206, 244, 1) 0%,
+    rgba(110, 138, 160, 1) 34%,
+    rgba(78, 101, 113, 1) 59%,
+    rgba(54, 73, 78, 1) 100%
+  );
+  color: #f2f2f2;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.page-title {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+form input {
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  border: none;
+  padding: 7px 20px;
+  width: 100%;
+}
+
+form button {
+  background-color: white;
+  border: 0;
+  padding: 7px 20px;
+  border-radius: 0 5px 5px 0;
+  margin-right: 1px;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.warning {
+  color: #b7061a;
+  margin-top: 50px;
+}
+
+.loading {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: #51d4db;
+  height: 50px;
+  width: 50px;
+  margin-top: 50px;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.anime-fact {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  overflow: hidden;
+}
+
+.anime-fact .anime-cover {
+  width: 30%;
+  overflow: hidden;
+}
+
+.anime-fact .anime-cover img {
+  width: 100%;
+  height: auto;
+}
+
+.anime-fact .anime-fact--content {
+  margin-left: 20px;
+  max-width: 70%;
+  width: 100%;
+}
+
+.anime-fact--content h1 {
+  font-size: 24px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.anime-fact--content h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.anime-fact--content .anime-fact--options {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 13px;
+}
+
+.anime-fact--options p {
+  cursor: pointer;
+  margin-top: 20px;
+  margin: 0;
+}
+
+.all-animes {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.all-animes p,
+footer a {
+  display: inline;
+  position: relative;
+  margin: 0px 10px;
+  cursor: pointer;
+  transition: all ease-in-out 1s;
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.all-animes p::after,
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  background-color: white;
+  transition: all ease-in-out 0.1s;
+  transform: scaleX(0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.all-animes p:hover::after,
+footer a:hover::after {
+  transform: scaleX(1);
+}
+
+.all-animes span:last-child {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 0 15px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 425px) {
+  .anime-fact--content h1 {
+    font-size: 22px;
+  }
+
+  .anime-fact--content h2 {
+    font-size: 15px;
   }
 }

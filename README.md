@@ -19,6 +19,7 @@ A API usada foi <a href="https://github.com/chandan-02/anime-facts-rest-api">Ani
 - Javascript
 - Typescript
 - ReactJS
+- Jest
 
 <br/><br/>
 

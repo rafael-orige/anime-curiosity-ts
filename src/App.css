@@ -20,6 +20,10 @@ body {
   margin: auto;
 }
 
+header {
+  width: 100%;
+}
+
 .page-title {
   text-align: center;
 }
